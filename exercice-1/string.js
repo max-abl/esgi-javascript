@@ -80,7 +80,6 @@ function vig(chaine, cle) {
     if (typeof (chaine) !== "string" || typeof (cle) !== "string")
         return "";
 
-    var limit = 25;
     var count = 0;
     var result = "";
     var convert_min_from_ascii = 97; // a
@@ -133,7 +132,7 @@ function prop_access(object, param_path = '') {
     }
 
     return tempObj
-};
+}
 
 
 
