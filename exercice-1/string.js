@@ -35,7 +35,7 @@ function camelCase(str) {
 }
 
 // Joindre mot par underscore
-function snakeCase(str) {
+function snake_case(str) {
     if (typeof (str) !== "string")
         return "";
 
