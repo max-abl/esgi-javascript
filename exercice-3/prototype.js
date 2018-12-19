@@ -94,6 +94,7 @@ String.prototype.vig = function(cle) {
   return result;
 };
 
+// prop_access : acces aux propriétés de l'objet
 Object.prototype.prop_access = function(path) {
   if (path === null || path === undefined) {
     return null;
