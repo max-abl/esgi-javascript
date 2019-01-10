@@ -19,8 +19,24 @@ function type_check_v2(obj, conf) {
 }
 
 // 3 - Vérification de type récursif
-function type_check(val, check) {
-  return false;
+function type_check(variable, check) {
+  var key;
+  for( key in Object.keys(conf)){
+    switch(key){
+      case 'type':
+        if(!type_check_v1(variable)) return false;
+      case 'value':
+        if(JSON.stringify(variable) !== JSON.stringify(conf[key])) return false;
+      case 'enum':
+        break;
+      case 'proprieties':
+        for(property in Object.key(conf[key])){
+          if(!variable[property]) return false;
+          if(type_check(variable[property], conf[key][property])) return false;
+        }
+        break;
+    }
+  }
 }
 
 // ========================================================
